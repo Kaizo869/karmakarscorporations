@@ -1,59 +1,49 @@
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #fff;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+  background: #ffffff;
+  color: #111;
 }
 
 header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
   background: #f7f7f7;
-  padding: 20px;
-  text-align: center;
   border-bottom: 1px solid #ccc;
 }
 
+.logo {
+  height: 60px;
+  margin-right: 15px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+main {
+  padding: 20px;
+}
+
 section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
+  margin-bottom: 40px;
 }
 
-h2 {
-  color: #444;
-}
-
-.preview {
-  width: 100%;
-  max-width: 700px;
-  margin: 20px 0;
-  border-radius: 8px;
-}
-
-.video-preview {
-  width: 100%;
-  max-width: 700px;
-  margin: 20px 0;
-  border-radius: 8px;
-}
-
-.download-btn {
+a {
   display: inline-block;
-  margin: 10px 10px 0 0;
+  margin-top: 10px;
   padding: 10px 15px;
-  background: #007bff;
+  background: #333;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
-}
-
-.download-btn:hover {
-  background: #0056b3;
+  border-radius: 4px;
 }
 
 footer {
   text-align: center;
-  padding: 20px;
-  background: #f1f1f1;
+  padding: 15px;
+  background: #f7f7f7;
   border-top: 1px solid #ccc;
 }
