@@ -1,31 +1,28 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karmakars Corporation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff; color: #333; margin: 0; padding: 0; }
+    header { display: flex; align-items: center; padding: 10px 20px; background: #f0f0f0; }
+    header img { height: 60px; margin-right: 15px; }
+    main { padding: 20px; }
+    section#game { margin-top: 40px; }
+    iframe { width: 100%; height: 500px; border: none; }
+  </style>
 </head>
 <body>
   <header>
-    <img src="assets/phoenix_logo.png" alt="Karmakars Phoenix Logo" class="logo" />
+    <img src="assets/logo.png" alt="Phoenix Logo">
     <h1>Karmakars Corporation</h1>
   </header>
   <main>
-    <section>
-      <h2>NFS India</h2>
-      <p>Experience high-speed street racing in India with custom Indian cars and epic police chases.</p>
-      <a href="#">Download Game</a>
-      <video controls width="100%">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <p>Welcome to the official site of Karmakars Corporation. Download the NFS India Game and try our new web game!</p>
+    <section id="game">
+      <h2>Play Now</h2>
+      <iframe src="flappy.html"></iframe>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Karmakars Corporation. All rights reserved.</p>
-  </footer>
 </body>
 </html>

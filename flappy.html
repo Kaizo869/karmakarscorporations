@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flappy Bird Clone</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #70c5ce; }
+    canvas { display: block; margin: 0 auto; background: #fff; }
+  </style>
+</head>
+<body>
+<canvas id="canvas" width="320" height="480"></canvas>
+<script>
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+
+let bird = { x: 50, y: 150, w: 20, h: 20, gravity: 1.5, lift: -20, velocity: 0 };
+let pipes = [];
+let pipeWidth = 50;
+let gap = 120;
+let frame = 0;
+
+function drawBird() {
+  ctx.fillStyle = "#f00";
+  ctx.fillRect(bird.x, bird.y, bird.w, bird.h);
+}
+
+function drawPipes() {
+  ctx.fillStyle = "#0f0";
+  pipes.forEach(p => {
+    ctx.fillRect(p.x, 0, pipeWidth, p.top);
+    ctx.fillRect(p.x, p.top + gap, pipeWidth, canvas.height);
+  });
+}
+
+function updatePipes() {
+  if (frame % 90 === 0) {
+    let top = Math.random() * 200 + 20;
+    pipes.push({ x: canvas.width, top });
+  }
+  pipes.forEach(p => p.x -= 2);
+  pipes = pipes.filter(p => p.x + pipeWidth > 0);
+}
+
+function updateBird() {
+  bird.velocity += bird.gravity;
+  bird.y += bird.velocity;
+  if (bird.y + bird.h > canvas.height) {
+    bird.y = canvas.height - bird.h;
+    bird.velocity = 0;
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawBird();
+  drawPipes();
+  updatePipes();
+  updateBird();
+  frame++;
+  requestAnimationFrame(draw);
+}
+
+document.addEventListener("keydown", () => {
+  bird.velocity = bird.lift;
+});
+
+draw();
+</script>
+</body>
+</html>
